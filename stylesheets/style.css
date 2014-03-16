@@ -1,0 +1,301 @@
+
+/**
+ * Primary styles
+ *
+ * Author: Scott Williams
+ */
+
+html, body {
+    background: #ccc;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#aaa), to(#555));
+    background: -moz-linear-gradient(0% 100% 90deg,#555, #aaa);
+    min-height: 500px;
+    height: 100%;
+    position: relative;
+    background: #aaa url('/images/textures/exclusive_paper.jpg') top left repeat;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    padding: 10px 0;
+    font-weight: 700;
+    color: #888;
+    top: 0;
+    line-height: 80px;
+}
+
+header > div {
+    width: 500px;
+    margin: 0 auto;
+}
+
+header img {
+    width: 89px;
+    margin: 0 auto;
+    float: left;
+}
+
+header h1 {
+    font-family: 'Brawler', Times, sans-serif;
+    font-size: 3.0em;
+    font-weight: normal;
+    text-shadow: 0 -1px 1px #333,0px 1px 2px #fff;
+    float: left;
+    margin-right: 10px;
+}
+header h2 {
+    font-family: 'Terminal Dosis Light', arial, sans-serif;
+    font-size: 1.5em;
+    color: #888;
+    letter-spacing: 0.2em;
+    font-weight: normal;
+    margin-left: 10px;
+    float: left;
+}
+
+#container {
+}
+
+#main {
+    width: 920px;
+    max-height: 800px;
+    overflow: visible;
+    margin: 0 auto;
+    position: relative;
+}
+
+aside{
+    width: 168px;
+    min-height: 500px;
+    float: left;
+    margin-right: 20px;
+}
+
+#photo {
+    float: left;
+    width: 732px;
+    height: 800px;
+    position: relative;
+}
+
+#photo_container {
+    position: absolute;
+}
+
+#photo img {
+    max-width: 705px;
+    max-height: 770px;
+    background: #f4f4f4;
+    padding: 10px;
+    -webkit-box-shadow: 3px 3px 5px rgba(16,16,16, 0.5);
+    -moz-box-shadow: 3px 3px 5px rgba(16,16,16, 0.5);
+}
+
+.shade {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+    background: rgba(0,0,0, 0.90);
+}
+
+.shade > img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+
+.poof {
+    -webkit-transform: scale(1.5);
+    -webkit-transition: all 0.5s;
+    -moz-transform: scale(1.5);
+    -moz-transition: all 0.5s;
+    opacity: 0;
+}
+
+.shrink {
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    opacity: 0.1;
+}
+
+.bounce {
+    -webkit-transform: scale(1.05);
+    -webkit-transition: all 0.3s;
+    -moz-transform: scale(1.05);
+    -moz-transition: all 0.3s;
+    opacity: 1;
+}
+
+
+a.thumbnail {
+    display: inline-block;
+    width: 80px;
+    height: 80px; 
+    cursor: pointer;
+    background: #fafafa;
+    padding: 1px;
+    opacity: 0.6;
+    -webkit-transition: opacity 0.3s ease-in-out;
+	-moz-transition:    opacity 0.3s ease-in-out;
+	-o-transition:      opacity 0.3s ease-in-out;
+	transition:         opacity 0.3s ease-in-out;
+}
+
+a.thumbnail:hover {
+    opacity: 1.0;
+    -webkit-transition: opacity 0.3s ease-in-out;
+	-moz-transition:    opacity 0.3s ease-in-out;
+	-o-transition:      opacity 0.3s ease-in-out;
+	transition:         opacity 0.3s ease-in-out;
+}
+
+a#about_link {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #777;
+    text-decoration: none;
+}
+
+a#about_link:hover {
+    text-decoration: underline;
+    color: #444;
+}
+
+div.portfolio_thumb > img {
+    vertical-align: middle;
+    border: 5px solid #cec1a6;
+    background: #444;
+    padding: 1px;
+}
+
+div#copyright {
+    color: #f2efe8;
+    background: #615336;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 20px;
+}
+
+
+footer {
+    display: block;
+    clear: both;
+    text-align: center;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+div#about {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    padding: 20px;
+    width: 400px;
+    background: rgba(34,34,34, 0.95);
+    color: #fafafa;
+
+    -webkit-border-radius:  5px;
+    -moz-border-radius:     5px;
+    -o-border-radius:       5px;
+    border-radius:          5px;
+
+    -webkit-box-shadow: 0 0 8px rgba(0,0,0,0.9);
+    
+    border: 3px solid #fbfbfb;
+}
+
+div#about::before {
+	content:"";
+	position:absolute;
+	bottom:auto; /* value = - border-top-width - border-bottom-width */
+    bottom: -20px;
+	left:40px; /* controls horizontal position */
+    border-width:20px 20px 0;
+	border-style:solid;
+    border-color:#fff transparent;
+    /* reduce the damage in FF3.0 */
+    display:block; 
+    width:0;
+}
+
+div#about::after {
+	content:"";
+	position:absolute;
+	bottom: auto; /* value = - border-top-width - border-bottom-width */
+	left:43px; /* value = (:before left) + (:before border-left) - (:after border-left) */
+    bottom: -16px;
+	border-width: 17px 17px 0;
+	border-style:solid;
+	border-color:rgba(34,34,34, 0.95) transparent;
+    /* reduce the damage in FF3.0 */
+    display:block; 
+    width:0;    
+}
+
+#about a {
+    color: #ccc;
+}
+
+
+div#about > p {
+    margin: 10px 0;
+    line-height: 18px;
+}
+
+.stuff {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media all and (orientation:portrait) {
+
+}
+
+@media all and (orientation:landscape) {
+
+}
+
+@media screen and (max-device-width: 480px) {
+  
+  /* html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
+}
+
+
+@media print {
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important;
+  -ms-filter: none !important; } 
+  a, a:visited { color: #444 !important; text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } 
+  tr, img { page-break-inside: avoid; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3{ page-break-after: avoid; }
+}
+
